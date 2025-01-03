@@ -1,7 +1,5 @@
+ 
  (function () {
-    let base = document.URL;
-    console.log(base);
-
     if (document.querySelector('.col-i-blog')) {
         let currentPage;
         let blogInner;
@@ -12,7 +10,7 @@
         async function ajaxPagination(pag) {
 
             currentPage = pag;
-            let teste = `http://localhost:4000/blog/${pag}/${namePag}`;
+            let teste = `https://icon-libras.vercel.app/blog/${pag}/${namePag}`;
             console.log(teste);
            
             var req = await fetch(`http://localhost:4000/blog/${pag}/${namePag}`, {
