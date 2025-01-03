@@ -1,5 +1,18 @@
- 
- (function () {
+(function () {
+    let url = '';
+
+
+    let base = document.URL;
+    let listBase = base.split('/');
+
+    if (listBase[3] === 'blog') {
+        url = `${listBase[0]}//${listBase[2]}/${listBase[3]}`;
+    } else {
+        url = `${listBase[0]}//${listBase[2]}/blog`;
+    }
+    console.log(url);
+
+
     if (document.querySelector('.col-i-blog')) {
         let currentPage;
         let blogInner;
@@ -8,18 +21,16 @@
         namePag = (namePag ? namePag : 'null');
 
         async function ajaxPagination(pag) {
-
-            currentPage = pag;
-           
-            var req = await fetch(`https://icon-libras.vercel.app/blog/${pag}/${namePag}`, {
+         
+            var req = await fetch(`${url}/${pag}/${namePag}`, {
                 method: 'GET'
             });
-           
+
             var json = await req.json();
-            console.log(json.blog);
+            console.log(json);
             blogList(json);
         }
-        
+
         function blogList(json) {
             blogInner = document.querySelector(".col-i-blog .center");
             blogInner.innerHTML = '';
@@ -81,7 +92,7 @@
                 });
             }
         }
-       ajaxPagination(0);
+        ajaxPagination(0);
     }
 }());
 

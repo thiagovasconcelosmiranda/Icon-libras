@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { prisma } from "../utils/prisma";
 
 async function create() {
-     await prisma.blog.create({
+     return await prisma.blog.create({
           data: {
                imagem: 'image-icom2.jpg',
                titulo: 'Aprenda com a idade surda',
@@ -12,28 +12,25 @@ async function create() {
      });
 }
 
+export const pagFind = async (skip: number, take: number) => {
+     const blog = await prisma.blog.findMany({
+          select: {
+               id: true,
+               imagem: true,
+               titulo: true,
+               descricao: true,
+               data: true
+          },
+          skip: skip,
+          take: take
+     });
 
-export const pagFind = async (skip: any, take: any) => {
-     const [blog, total] = await prisma.$transaction([
-
-          prisma.blog.findMany({
-               select: {
-                    id: true,
-                    imagem: true,
-                    titulo: true,
-                    descricao: true,
-                    data: true
-               },
-               skip, take
-          }),
-          prisma.blog.count()
-     ]);
+     let total = await prisma.blog.count();
      const totalPage = Math.ceil(total / take);
-
-     return { blog,  total,  totalPage };
+     return { blog, total, totalPage };
 }
+
 export const pagAll = async (req: Request, res: Response) => {
-    // await create();
      const blog = await prisma.blog.findMany();
      return res.json({ blog: blog });
 }
