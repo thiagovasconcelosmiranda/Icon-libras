@@ -10,10 +10,8 @@
         async function ajaxPagination(pag) {
 
             currentPage = pag;
-            let teste = `https://icon-libras.vercel.app/blog/${pag}/${namePag}`;
-            console.log(teste);
            
-            var req = await fetch(`http://localhost:4000/blog/${pag}/${namePag}`, {
+            var req = await fetch(`https://icon-libras.vercel.app/blog/${pag}/${namePag}`, {
                 method: 'GET'
             });
            

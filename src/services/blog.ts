@@ -33,6 +33,7 @@ export const pagFind = async (skip: any, take: any) => {
      return { blog,  total,  totalPage };
 }
 export const pagAll = async (req: Request, res: Response) => {
+    // await create();
      const blog = await prisma.blog.findMany();
      return res.json({ blog: blog });
 }
