@@ -1,7 +1,5 @@
 (function () {
     let url = '';
-
-
     let base = document.URL;
     let listBase = base.split('/');
 
@@ -10,8 +8,6 @@
     } else {
         url = `${listBase[0]}//${listBase[2]}/blog`;
     }
-    console.log(url);
-
 
     if (document.querySelector('.col-i-blog')) {
         let currentPage;
@@ -27,7 +23,6 @@
             });
 
             var json = await req.json();
-            console.log(json);
             blogList(json);
         }
 
