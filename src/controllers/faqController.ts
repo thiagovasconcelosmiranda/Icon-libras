@@ -1,5 +1,7 @@
 import { Request, Response } from "express";
 
 export const faq = (req: Request, res: Response) => {
-   res.render('pages/faq');
+   let footer: boolean = false;
+
+   res.render('pages/faq', {footer});
 }

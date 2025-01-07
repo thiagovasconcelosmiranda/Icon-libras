@@ -17,11 +17,10 @@
         namePag = (namePag ? namePag : 'null');
 
         async function ajaxPagination(pag) {
-         
+
             var req = await fetch(`${url}/${pag}/${namePag}`, {
                 method: 'GET'
             });
-
             var json = await req.json();
             blogList(json);
         }
@@ -29,25 +28,26 @@
         function blogList(json) {
             blogInner = document.querySelector(".col-i-blog .center");
             blogInner.innerHTML = '';
-
-            json.blog.forEach(item => {
-                blogInner.insertAdjacentHTML("beforeEnd",
-                    `
-             <div class="blog-item">
-                 <div class="blog-img">
-                     <img src="/assets//images/${item.imagem}"/>
-                 </div>
-                  <div class="blog-info">
-                       <a href=""><h3 class="fontsize">${item.titulo}</h3></a>
-                        <p class="p-blue">${item.data}</p>
-                        <p class="p-black">${item.descricao}</p>
+            if (json.blog.length > 0) {
+                json.blog.forEach(item => {
+                    blogInner.insertAdjacentHTML("beforeEnd",
+                        `
+                 <div class="blog-item">
+                     <div class="blog-img">
+                         <img src="/assets//images/${item.imagem}"/>
+                     </div>
+                      <div class="blog-info">
+                           <a href=""><h3 class="fontsize">${item.titulo}</h3></a>
+                            <p class="p-blue">${item.data}</p>
+                            <p class="p-black">${item.descricao}</p>
+                      </div>
                   </div>
-              </div>
-            `
-                );
-            });
-            const totalPage = json.totalPage;
-            pagination(totalPage);
+                `
+                    );
+                });
+                const totalPage = json.totalPage;
+                pagination(totalPage);
+            }
         }
 
         function pagination(totalPage) {

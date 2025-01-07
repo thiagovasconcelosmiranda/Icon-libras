@@ -17,12 +17,12 @@
        <div class="row-i-14">
         <div class="col-14-i">
            <div class="i-button">
-               <button id="client" class="button" >NÃO SOU CLIENTE ICON</button>
-               <button id="notclient" class="button active-button">SOU CLIENTE ICON</button>
+               <button id="client" class="button" data-button="not-client" >NÃO SOU CLIENTE ICON</button>
+               <button id="notclient" class="button active-button" data-button="yes-client">SOU CLIENTE ICON</button>
            </div>
 
            <!--item-button-1-->
-           <div class="i-client-x" style="display: none;">
+           <div class="i-client-x" id="pag-1">
             <div class="i-text-1">
                 <h3>Como faço para habilitar câmera, microfone e áudio durante uma videochamada?</h3>
                 <p>Clique nos respectivos ícones – microfone, câmera e áudio – como mostra imagem abaixo.</p>
@@ -34,7 +34,7 @@
            </div>
            
            <!--item-button-2-->
-           <div class="i-client-x" id="i-notclient">
+           <div class="i-client-x clientVisible" id="pag-2">
             <div class="i-text-1">
                 <h3>Como posso contratar a ICON?</h3>
                 <p>Para contratar o ICOM, entre em contato com nosso time pelo telefone (11) 2227-3904 e agende uma demonstração.<a href="#">Entre e contato</a></p>
@@ -69,6 +69,4 @@
       {{>partials/form-components}}
     </div>
     {{>partials/social-components}}
-      <script type="text/javascript" src="/assets/js/navbar-script.js"></script>  
-  </body>
-</html>
+    {{>partials/footer}}

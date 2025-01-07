@@ -87,6 +87,7 @@
             width: 80%;
             margin: auto;
             margin-bottom: 30px;
+            display: none;
 
             .i-text-1 {
                 h3 {
@@ -99,6 +100,11 @@
                     margin-bottom: 20px;
                 }
             }
+        }
+
+        .clientVisible {
+            display: flex;
+            flex-direction: column;
         }
     }
 }
