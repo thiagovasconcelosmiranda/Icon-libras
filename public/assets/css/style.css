@@ -2285,7 +2285,7 @@ form .contact-col-button {
   max-width: 600px;
 }
 .row-i-service-cart .service-cart-row {
-  width: 1700px;
+  max-width: 1700px;
   height: auto;
   display: flex;
   justify-content: center;
@@ -2295,7 +2295,7 @@ form .contact-col-button {
   border-top-right-radius: 50%;
   padding: 50px 0;
   flex-wrap: wrap;
-  margin-left: -90px;
+  margin-left: -100px;
 }
 .row-i-service-cart .service-cart-row .service-cart-col {
   width: 680px;
@@ -2314,7 +2314,7 @@ form .contact-col-button {
   height: 100%;
 }
 .row-i-service-cart .service-cart-row .service-cart-col .service-cart-description {
-  width: 80%;
+  max-width: 70%;
 }
 .row-i-service-cart .service-cart-row .service-cart-col .service-cart-description p {
   color: #fff;
