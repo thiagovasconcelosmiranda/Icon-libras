@@ -5,6 +5,7 @@ import * as faqController from '../controllers/faqController';
 import * as privacyController from '../controllers/privacy';
 import * as blogController from '../controllers/blogController';
 import * as contactController from '../controllers/contactController';
+import * as serviceController from '../controllers/serviceCartController';
 
 export const router = Router();
 
@@ -16,3 +17,4 @@ router.get('/blog/:pag/:namePage', blogController.blogPag)
 router.get('/privacidade', privacyController.privacy);
 router.get('/contato', contactController.contact);
 router.post('/new-contact', contactController.createContact);
+router.get('/atendimento-cartorios', serviceController.ServiceCart);
