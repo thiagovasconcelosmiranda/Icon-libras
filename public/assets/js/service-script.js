@@ -11,7 +11,7 @@
                 click.style.fontSize = "50px";
 
                 if (description.style.marginTop == '0%') {
-                    item.style.backgroundColor = 'rgb(226, 223, 223)';
+                    item.style.backgroundColor = 'rgb(241, 241, 241)';
                     description.style.marginTop = '-200%';
                     click.classList.add('fa-plus');
                     click.style = "";

@@ -12,10 +12,12 @@
         padding: 30px 0;
 
         h1 {
-            color: #fae039;
+            color: #fbe67e;
             font-size: 70px;
-            font-weight: bold;
-            max-width: 700px;
+            max-width: 600px;
+            font-family: 'Catamaran', Helvetica, Arial, Lucida, sans-serif;
+            font-weight: 700;
+            font-size: 48px;
         }
 
         p {
@@ -23,23 +25,24 @@
             margin-top: 30px;
             max-width: 600px;
         }
-    }
 
+    }
+   .background-x{
+    
     .service-cart-row {
-        max-width: 1700px;
+        width: 100%;
         height: auto;
         display: flex;
         justify-content: center;
         align-items: center;
         background-color: rgb(25, 25, 168);
-        border-top-left-radius: 50%;
-        border-top-right-radius: 50%;
-        padding: 50px 0;
-        flex-wrap: wrap;
-        margin-left: -100px;
+        padding: 30px 0;
+        margin: auto;
+        position: relative;
+        z-index: 80;
 
         .service-cart-col {
-            width: 680px;
+            width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -58,6 +61,7 @@
 
             .service-cart-description {
                 max-width: 70%;
+
                 p {
                     color: #fff;
                     line-height: 25px;
@@ -67,6 +71,11 @@
         }
     }
 
+
+   }
+   
+
+   
     .service-cart-row-2 {
         width: 80%;
         display: flex;
@@ -100,9 +109,10 @@
         }
 
         .price {
+            font-family: 'Catamaran', Helvetica, Arial, Lucida, sans-serif;
             text-align: center;
             font-size: 18px;
-            color: rgb(67, 79, 105);
+            color: #19B2E8 !important;
             margin-top: 10px;
             font-weight: bold;
         }
@@ -115,9 +125,11 @@
             margin-top: 30px;
 
             a {
+                font-family: 'Lato', Helvetica, Arial, Lucida, sans-serif !important;
                 padding: 20px 30px;
-                background-color: #ffdf0f;
+                background-color: #fbe67e;
                 color: #000;
+                font-weight: 700;
                 font-size: 20px;
                 border-radius: 50px;
                 transition: all .4s;
@@ -152,7 +164,7 @@
     .service-cart-row-3 {
         width: 100%;
         height: auto;
-        background-color: #efefef;
+        background-color: #fff;
         padding: 20px 0;
 
         .service-cart-title {
@@ -280,11 +292,10 @@
 
             .service-cart-doubts-i {
                 width: 80%;
-                padding: 10px;
-                background-color: rgb(226, 223, 223);
+                padding: 5px;
+                background-color: rgb(241, 241, 241);
                 gap: 30px;
                 margin: auto;
-                padding: 30px 20px;
                 margin-top: 20px;
                 border: 1px solid gray;
 
@@ -298,11 +309,13 @@
                     i {
                         font-size: 20px;
                         cursor: pointer;
+                        color: gray;
                     }
 
                     p {
-                        color: #000;
-                        font-size: 25px;
+                        color: #075392;
+                        font-size: 18px;
+                        font-weight: bold;
                     }
                 }
 
@@ -316,7 +329,7 @@
                         padding: 20px;
                         margin-top: -200%;
                         transition: 1s;
-                        
+
                         h5 {
                             max-width: 90%;
                             font-size: 20px;
